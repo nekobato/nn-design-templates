@@ -1,0 +1,115 @@
+@import "./variables.pcss";
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nn-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-break: break-word;
+  transition-property: background-color, border-color, color, fill;
+  cursor: pointer;
+  background: #ddd;
+
+  &:hover,
+  &:focus {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    filter: brightness(0.9);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &.type-small {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  &.type-xsmall {
+    padding: 0 16px;
+    min-height: 32px;
+    font-size: 14px;
+  }
+
+  &.type-x2small {
+    padding: 0 16px;
+    min-height: 24px;
+    font-size: 14px;
+  }
+
+  &.type-primary {
+    background: $service-color-primary;
+    color: #fff;
+  }
+
+  &.type-secondary {
+    background: transparent;
+    border: 2px solid $service-color-primary;
+    color: $service-color-primary;
+    background: transparent;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $service-color-primary-lighten-20;
+      color: $service-color-primary-lighten-20;
+    }
+
+    &:active {
+      border: 2px solid $service-color-primary-darken-20;
+      color: $service-color-primary-darken-20;
+    }
+  }
+
+  &.type-attention {
+    background: #ff0211;
+    color: #ffffff;
+  }
+}
+
+.nn-icon-button {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  &:hover {
+    svg {
+      fill: #dddddd;
+    }
+  }
+}
+
+.nn-back-button {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: $service-color-primary;
+  font-weight: bold;
+  text-decoration: none;
+  span {
+    margin-left: 4px;
+  }
+  .nn-icon {
+    fill: $service-color-primary;
+  }
+}
