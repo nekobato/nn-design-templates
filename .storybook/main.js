@@ -1,14 +1,17 @@
 const path = require("path");
 module.exports = {
-  stories: [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
-  ],
+  stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
 
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
       test: /\.pcss$/,
+      use: ["style-loader", "css-loader", "postcss-loader"],
+      include: path.resolve(__dirname, "../"),
+    });
+
+    config.module.rules.push({
+      test: /\.postcss$/,
       use: ["style-loader", "css-loader", "postcss-loader"],
       include: path.resolve(__dirname, "../"),
     });
