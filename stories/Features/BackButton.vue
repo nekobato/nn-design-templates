@@ -9,7 +9,7 @@
     <span>戻る</span>
   </button>
 </template>
-<script lang="ts">
+<script>
 import Vue from "vue";
 export default Vue.extend({
   props: ["src"],
