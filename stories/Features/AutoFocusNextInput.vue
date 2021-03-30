@@ -1,5 +1,5 @@
 <template>
-  <input type="text" class="nn-text-field" @input="onInput" :value="value" />
+  <input type="text" class="nn-text-field" @input="onInput" :value="value" :maxlength="maxlength" />
 </template>
 
 <script>
@@ -7,12 +7,12 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "AutoFocusNextInput",
-  prop: ["next", "maxlength", "value"],
+  props: ["next", "maxlength", "value"],
   methods: {
-    onInput() {
-      this.$emit("input");
-      if (this.value === this.mazlength) {
-        document.querySelector(this.next).focus();
+    onInput(e) {
+      this.$emit("input", e.target.value);
+      if (e.target.value.length === Number(this.maxlength)) {
+        document.querySelector(`#${this.next}`).focus();
       }
     },
   },

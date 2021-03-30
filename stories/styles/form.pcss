@@ -1,6 +1,24 @@
 .nn-form {
 }
 
+input.nn-text-field,
+textarea.nn-text-field {
+  display: inline-flex;
+  margin: 0;
+  padding: 0 8px;
+  height: 40px;
+  background: #f9f9ff;
+  border: 2px solid #dddddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+
+  &:focus {
+    border-color: #0095ee;
+  }
+}
+
 .nn-toggle {
   display: inline-flex;
   cursor: pointer;
@@ -98,5 +116,22 @@
 
   &:focus {
     border-color: #0095ee;
+  }
+}
+
+.nn-radio {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.nn-radio-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  span {
+    margin-left: 4px;
+    line-height: 1;
   }
 }

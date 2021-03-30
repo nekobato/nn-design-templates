@@ -1,0 +1,26 @@
+.nn-details {
+  position: relative;
+  display: inline-flex;
+  & > div {
+    position: absolute;
+    box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.24);
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    width: 120px;
+  }
+  & > summary {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+  }
+  &.align-left {
+    & > div {
+      left: 0;
+    }
+  }
+  &.align-right {
+    & > div {
+      right: 0;
+    }
+  }
+}
